@@ -1,5 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+define('EXT','.php');
+
+// Meng-include semua file dari core yang dibutuhkan saat kelas dipanggi
+spl_autoload_register(function ($class) {
+	include_once APPPATH."core/".strtolower($class).EXT;
+});
+
+
 
 /*
 |--------------------------------------------------------------------------
